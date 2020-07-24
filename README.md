@@ -23,6 +23,8 @@ if(8 == 3) RESULTADO = FALSE
 Este proyecto fue hecho utilizando las siguientes **herramientas**:
 * [**Java JDK 8**](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html)
 * [**JFlex v1.4.3**](https://mega.nz/#!kp5wmSTR!VRGITdbm5zuSWDMeZ8hVgVYWCNl-J0gMcAqQ2k8FBfM)
+* [**Java Cup**](https://mega.nz/file/15Zk2IhJ#0_IRdD6uQWF02_4MWNkbz-JwR8d4222Pz3OQh5SIhec)
+* [**Java Cup 11a**](https://mega.nz/file/h4By1ahD#HwNXmtmw3BlUlAPNNilX1Am6SDICMvA8LOTkDPYZg4I)
 * [**Eclipse IDE**](https://www.eclipse.org/downloads/)
 * [**WindowBuilder para JFrame (Eclipse IDE)**](https://es.stackoverflow.com/questions/102406/como-agregar-jframe-en-eclipse)
 
