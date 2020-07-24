@@ -3,11 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package compiladores_sintatico
-/**
- *
- * @author rbatista
- */
+package analizador;
+
 public enum Tokens {
    Mayor,
    Menor,

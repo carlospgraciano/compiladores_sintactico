@@ -1,10 +1,10 @@
-package codigo;
-import static codigo.Tokens.*;
+package analizador;
+import static analizador.Tokens.*;
 %%
 %class Lexer
 %type Tokens
 
-D1=[0-9]
+D1 = [0-9]
 D2 = [0-9]
 
 
