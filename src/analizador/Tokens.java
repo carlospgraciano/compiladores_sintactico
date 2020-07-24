@@ -6,9 +6,14 @@
 package analizador;
 
 public enum Tokens {
-   Mayor,
-   Menor,
-   Noesigual,
-   Esigual,
+	If,
+	Abre_Parentesis,
+	Cierra_Parentesis,
+	Mayor,
+	MayorOIgual,
+	Menor,
+	MenorOIgual,
+	NoIgual,
+	Igual,
     ERROR
 }
