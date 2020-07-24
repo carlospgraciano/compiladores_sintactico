@@ -3,18 +3,20 @@ import static analizador.Tokens.*;
 %%
 %class Lexer
 %type Tokens
-
-D1 = [0-9]
-D2 = [0-9]
-
-
+L = [a-zA-Z_]+
+D = [0-9]+
+espacio = [ ,\t,\r]+
 %{
     public String lexeme;
 %}
 %%
-
-{D1}>{D2} {lexeme=yytext(); return Mayor;}
-{D1}<{D2} {lexeme = yytext(); return Menor;}
- {D1} != {D2} {lexeme = yytext(); return Noesigual;}
-{D1}=={D2} {lexeme=yytext(); return EsIgual;}
+if {lexeme=yytext(); return If;}
+"(" {return Abre_Parentesis;}
+")" {return Cierra_Parentesis;}
+{D}{espacio}>{espacio}{D} {lexeme=yytext(); return Mayor;}
+{D}{espacio}>={espacio}{D} {lexeme=yytext(); return MayorOIgual;}
+{D}{espacio}<{espacio}{D} {lexeme = yytext(); return Menor;}
+{D}{espacio}<={espacio}{D} {lexeme = yytext(); return MenorOIgual;}
+{D}{espacio}!={espacio}{D} {lexeme = yytext(); return NoIgual;}
+{D}{espacio}=={espacio}{D} {lexeme=yytext(); return Igual;}
  . {return ERROR;}
