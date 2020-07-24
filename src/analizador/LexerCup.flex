@@ -26,10 +26,10 @@ if {return new Symbol(sym.If, yychar, yyline, yyText());}
 "("  {return new Symbol(sym.Abre_Parentesis, yychar, yyline, yyText());}
 ")"  {return new Symbol(sym.Cierra_Parentesis, yychar, yyline, yyText());}
 ">"  {return new Symbol(sym.Mayor, yychar, yyline, yyText());}
-">=" {return new Symbol(sym.MayorOIgual, yychar, yyline, yyText());}
+">=" {return new Symbol(sym.Mayor_Igual, yychar, yyline, yyText());}
 "<"  {return new Symbol(sym.Menor, yychar, yyline, yyText());}
-"<=" {return new Symbol(sym.MenorOIgual, yychar, yyline, yyText());}
-"!=" {return new Symbol(sym.NoIgual, yychar, yyline, yyText());}
+"<=" {return new Symbol(sym.Menor_Igual, yychar, yyline, yyText());}
+"!=" {return new Symbol(sym.No_Igual, yychar, yyline, yyText());}
 "==" {return new Symbol(sym.Igual, yychar, yyline, yyText());}
 {L}({L}|{D})* {return new Symbol(sym.Identificador, yychar, yyline, yyText());}
 ("(-"{D}")")|{D} {return new Symbol(sym.Numero, yychar, yyline, yyText());}
