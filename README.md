@@ -1,6 +1,6 @@
 # Analizador Sintáctico (Teoría de compiladores)
 
-Nuestro analizador léxico **cumple** con los siguientes **requerimientos**:
+Nuestro analizador sintáctico **cumple** con los siguientes **requerimientos**:
 
 **Mandato:**
 
