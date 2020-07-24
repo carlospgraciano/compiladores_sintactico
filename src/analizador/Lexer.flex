@@ -11,12 +11,14 @@ espacio = [ ,\t,\r]+
 %}
 %%
 if {lexeme=yytext(); return If;}
-"(" {return Abre_Parentesis;}
-")" {return Cierra_Parentesis;}
-{D}{espacio}>{espacio}{D} {lexeme=yytext(); return Mayor;}
-{D}{espacio}>={espacio}{D} {lexeme=yytext(); return MayorOIgual;}
-{D}{espacio}<{espacio}{D} {lexeme = yytext(); return Menor;}
-{D}{espacio}<={espacio}{D} {lexeme = yytext(); return MenorOIgual;}
-{D}{espacio}!={espacio}{D} {lexeme = yytext(); return NoIgual;}
-{D}{espacio}=={espacio}{D} {lexeme=yytext(); return Igual;}
+"(" {lexeme=yytext(); return Abre_Parentesis;}
+")" {lexeme=yytext(); return Cierra_Parentesis;}
+">" {lexeme=yytext(); return Mayor;}
+">=" {lexeme=yytext(); return MayorOIgual;}
+"<" {lexeme = yytext(); return Menor;}
+"<=" {lexeme = yytext(); return MenorOIgual;}
+"!=" {lexeme = yytext(); return NoIgual;}
+"==" {lexeme=yytext(); return Igual;}
+{L}({L}|{D})* {lexeme=yytext(); return Identificador;}
+("(-"{D}")")|{D} {lexeme=yytext(); return Numero;}
  . {return ERROR;}
