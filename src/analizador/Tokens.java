@@ -15,5 +15,7 @@ public enum Tokens {
 	MenorOIgual,
 	NoIgual,
 	Igual,
+	Identificador,
+	Numero,
     ERROR
 }
