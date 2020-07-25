@@ -7,7 +7,6 @@ import java_cup.runtime.Symbol;
 %full
 %line
 %char
-L = [a-zA-Z_]+
 D = [0-9]+
 espacio = [ ,\t,\r]+
 %{
@@ -20,17 +19,16 @@ espacio = [ ,\t,\r]+
     }
 %}
 %%
-if {return new Symbol(sym.If, yychar, yyline, yyText());}
+if {return new Symbol(sym.If, yychar, yyline, yytext());}
 {espacio} {/*Ignore*/}
 "//" {/*Ignore*/}
-"("  {return new Symbol(sym.Abre_Parentesis, yychar, yyline, yyText());}
-")"  {return new Symbol(sym.Cierra_Parentesis, yychar, yyline, yyText());}
-">"  {return new Symbol(sym.Mayor, yychar, yyline, yyText());}
-">=" {return new Symbol(sym.Mayor_Igual, yychar, yyline, yyText());}
-"<"  {return new Symbol(sym.Menor, yychar, yyline, yyText());}
-"<=" {return new Symbol(sym.Menor_Igual, yychar, yyline, yyText());}
-"!=" {return new Symbol(sym.No_Igual, yychar, yyline, yyText());}
-"==" {return new Symbol(sym.Igual, yychar, yyline, yyText());}
-{L}({L}|{D})* {return new Symbol(sym.Identificador, yychar, yyline, yyText());}
-("(-"{D}")")|{D} {return new Symbol(sym.Numero, yychar, yyline, yyText());}
- . {return new Symbol(sym.ERROR, yychar, yyline, yyText());}
+"("  {return new Symbol(sym.Abre_Parentesis, yychar, yyline, yytext());}
+")"  {return new Symbol(sym.Cierra_Parentesis, yychar, yyline, yytext());}
+">"  {return new Symbol(sym.Mayor, yychar, yyline, yytext());}
+">=" {return new Symbol(sym.Mayor_Igual, yychar, yyline, yytext());}
+"<"  {return new Symbol(sym.Menor, yychar, yyline, yytext());}
+"<=" {return new Symbol(sym.Menor_Igual, yychar, yyline, yytext());}
+"!=" {return new Symbol(sym.No_Igual, yychar, yyline, yytext());}
+"==" {return new Symbol(sym.Igual, yychar, yyline, yytext());}
+("(-"{D}")")|{D} {return new Symbol(sym.Numero, yychar, yyline, yytext());}
+ . {return new Symbol(sym.ERROR, yychar, yyline, yytext());}
