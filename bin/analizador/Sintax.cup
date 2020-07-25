@@ -1,0 +1,26 @@
+package analizador;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+	private Symbol s;
+	
+	public void Syntax_Error(Symbol s){
+		this.s = s;
+	}
+	
+	public Symbol getS(){
+		return this.s;
+	}
+:};
+
+terminal If, Abre_Parentesis, Cierra_Parentesis, Mayor, Mayor_Igual, Menor, Menor_Igual, No_Igual, Igual, Numero, ERROR;
+non terminal INICIO, SENTENCIA, DECLARACION;
+
+start with INICIO;
+
+INICIO ::= If Abre_Parentesis SENTENCIA Cierra_Parentesis
+;
+SENTENCIA ::= Numero Mayor Numero | Numero Menor Numero | Numero Mayor_Igual Numero | Numero Menor_Igual Numero | Numero Igual Numero | Numero No_Igual Numero
+;

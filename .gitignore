@@ -1,4 +1,4 @@
-src/Lexer.java
-src/LexerCup.java
-src/Sintax.java
-src/sym.java
+src/analizador/Lexer.java
+src/analizador/LexerCup.java
+src/analizador/Sintax.java
+src/analizador/sym.java
