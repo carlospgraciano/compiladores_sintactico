@@ -19,6 +19,5 @@ if {lexeme=yytext(); return If;}
 "<=" {lexeme = yytext(); return Menor_Igual;}
 "!=" {lexeme = yytext(); return No_Igual;}
 "==" {lexeme=yytext(); return Igual;}
-{L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 ("(-"{D}")")|{D} {lexeme=yytext(); return Numero;}
  . {return ERROR;}
