@@ -37,7 +37,7 @@ Los **miembros** de este grupo son:
 
 # Cómo correr el programa? :thinking:
 
-La aplicación se corre ejecuntaod 2 archivos:
+La aplicación se corre ejecutando/correr desde el IDE los 2 archivos principales:
 
 1. Principal.java: Se debe de correr este archivo puesto que genera los archivos para el analizador léxico y sintáctico.
 2. FrmPrincipal.java: Se debe correr este archivo para poder visualizar la aplicación de Desktop hecha con JFrame.
