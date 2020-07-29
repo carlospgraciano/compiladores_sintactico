@@ -13,14 +13,21 @@ parser code
 	public Symbol getS(){
 		return this.s;
 	}
+	
 :};
 
-terminal If, Abre_Parentesis, Cierra_Parentesis, Mayor, Mayor_Igual, Menor, Menor_Igual, No_Igual, Igual, Numero, ERROR;
-non terminal INICIO, SENTENCIA, DECLARACION;
+terminal If, Abre_Parentesis, Cierra_Parentesis, Mayor, Mayor_Igual, Menor, Menor_Igual, No_Igual, Igual, ERROR;
+terminal Integer  Numero;
+non terminal INICIO, SENTENCIA;
 
 start with INICIO;
 
-INICIO ::= If Abre_Parentesis SENTENCIA Cierra_Parentesis
+INICIO ::= If Abre_Parentesis SENTENCIA:sen Cierra_Parentesis {: RESULT = sen; :}
 ;
-SENTENCIA ::= Numero Mayor Numero | Numero Menor Numero | Numero Mayor_Igual Numero | Numero Menor_Igual Numero | Numero Igual Numero | Numero No_Igual Numero
+SENTENCIA ::= Numero:n1 Mayor Numero:n2 {: RESULT = n1.intValue() > n2.intValue(); :}
+			| Numero:n1 Menor Numero:n2 {: RESULT = n1.intValue() < n2.intValue(); :}
+			| Numero:n1 Mayor_Igual Numero:n2 {: RESULT = n1.intValue() >= n2.intValue(); :}
+			| Numero:n1 Menor_Igual Numero:n2 {: RESULT = n1.intValue() <= n2.intValue(); :}
+			| Numero:n1 Igual Numero:n2 {: RESULT = n1.intValue() == n2.intValue(); :}
+			| Numero:n1 No_Igual Numero:n2 {: RESULT = n1.intValue() != n2.intValue(); :}
 ;

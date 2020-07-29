@@ -1,6 +1,5 @@
 package analizador;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 
@@ -8,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import JFlex.LexParse;
 import java_cup.runtime.Symbol;
 
 import javax.swing.JTextField;
@@ -20,6 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+
 
 public class FrmPrincipal extends JFrame {
 
@@ -116,8 +115,8 @@ public class FrmPrincipal extends JFrame {
 		Sintax s = new Sintax(new analizador.LexerCup(new StringReader(ST)));
 		
 		try {
-			s.parse();
-			txtSalidaSin.setText("Analisis realizado correctamente");
+			Object resultado = s.parse().value;
+			txtSalidaSin.setText("Análisis realizado correctamente \n" + ST + " RESULTADO = " + resultado);
 			txtSalidaSin.setForeground(new Color(25, 111, 61));
 		} catch (Exception e) {
 			Symbol sym = s.getS();

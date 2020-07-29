@@ -30,5 +30,5 @@ if {return new Symbol(sym.If, yychar, yyline, yytext());}
 "<=" {return new Symbol(sym.Menor_Igual, yychar, yyline, yytext());}
 "!=" {return new Symbol(sym.No_Igual, yychar, yyline, yytext());}
 "==" {return new Symbol(sym.Igual, yychar, yyline, yytext());}
-("(-"{D}")")|{D} {return new Symbol(sym.Numero, yychar, yyline, yytext());}
+("(-"{D}")")|{D} {return new Symbol(sym.Numero, yychar, yyline, new Integer(yytext()));}
  . {return new Symbol(sym.ERROR, yychar, yyline, yytext());}
