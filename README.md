@@ -34,3 +34,10 @@ Los **miembros** de este grupo son:
 * *Ines Cuevas*: **15-0790**
 * *Jorge Cuevas*: **19-0459**
 * *Rafael Batista*: **19-0702**
+
+# Cómo correr el programa? :thinking:
+
+La aplicación se corre ejecuntaod 2 archivos:
+
+1. Principal.java: Se debe de correr este archivo puesto que genera los archivos para el analizador léxico y sintáctico.
+2. FrmPrincipal.java: Se debe correr este archivo para poder visualizar la aplicación de Desktop hecha con JFrame.
